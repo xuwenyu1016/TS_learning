@@ -1,0 +1,58 @@
+let isFinished: boolean = false;
+
+let decimal: number = 20;
+let heximal: number = 0x14;
+let binery: number = 0b10100;
+let octal: number = 0o24;
+
+let nameOne: string = 'china';
+let ageOne: number = 66;
+let theSentence = `Hello, my name is ${nameOne}.
+I'll be ${ageOne + 1}.`
+
+let list: number[] = [1,2,3]; // suggested
+let listAny: any[] = [1,true, '123'];
+let listNew: Array<number> = [1,2,3];
+
+// tuple 类型，长度限制的数组
+let x: [string, number];
+x = ['hi', 10];
+
+enum Color {
+  red = 0,
+  green,
+  blue
+}
+let c:Color = Color.green;
+
+let ColorName: string = Color[2];
+console.log(ColorName);
+
+let notSoSure: any = 2;
+notSoSure = 'maybe a string';
+
+function warnUser(): void {
+  console.log('Warning');
+}
+
+let notUsed: void = null; // 这里只能赋null 或者 undefined
+
+// null undefined
+let u: undefined = undefined;
+let n: null = undefined;
+
+// never
+function error(message: string): never {
+  throw new Error(message);
+}
+function fail() {
+  return error('sth wrong');
+}
+
+declare function create(o: object | null): void;
+create({prop:0})  // 只能用对象
+create(null);
+
+let someValue: any = 'this is a string'; // 强制转化为字符串
+// let strLength:number = (<string>someValue).length;  方法一
+// let strLength:number = (someValue as String).length 方法二 suggested
